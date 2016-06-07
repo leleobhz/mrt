@@ -20,13 +20,7 @@
 #include <netinet/icmp6.h>
 #endif /* HAVE_NETINET_ICMP6_H */
 #ifdef linux
-/* #include <linux/in.h> */
-struct in_pktinfo
-{
-        int             ipi_ifindex;
-        struct in_addr  ipi_spec_dst;
-        struct in_addr  ipi_addr;
-};
+#include <linux/in.h>
 #endif /* linux */
 #include <api6.h>
 #include <igmp.h>

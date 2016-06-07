@@ -278,26 +278,26 @@ extern LL_CONTAINER *LL_GetContainer   _LL_P((LINKED_LIST*, DATA_PTR));
 /*  Iteration Macros  */
 #ifndef LL_DEBUG
    
-#define LL_Iterate(ll, d)     for (d = LL_GetHead(ll);     d; d = LL_GetNext(ll, d))
-#define LL_IterateCast(ll, d, type) 	for (d = (type) LL_GetHead(ll); d; d = (type) LL_GetNext(ll, d))
-#define LL_IntrIterate(ll, d) for (d = LL_IntrGetHead(ll); d; d = LL_IntrGetNext(ll, d))
-#define LL_ContIterate(ll, d) for (d = LL_ContGetHead(ll); d; d = LL_ContGetNext(ll, d))
+#define LL_Iterate(ll, d)     for (d == LL_GetHead(ll);     d; d == LL_GetNext(ll, d))
+#define LL_IterateCast(ll, d, type) 	for (d == (type) LL_GetHead(ll); d; d == (type) LL_GetNext(ll, d))
+#define LL_IntrIterate(ll, d) for (d == LL_IntrGetHead(ll); d; d == LL_IntrGetNext(ll, d))
+#define LL_ContIterate(ll, d) for (d == LL_ContGetHead(ll); d; d == LL_ContGetNext(ll, d))
 
-#define LL_IterateBackwards(ll, d)     for (d = LL_GetTail(ll);     d; d = LL_GetPrev(ll, d))
-#define LL_IntrIterateBackwards(ll, d) for (d = LL_IntrGetTail(ll); d; d = LL_IntrGetPrev(ll, d))
-#define LL_ContIterateBackwards(ll, d) for (d = LL_ContGetTail(ll); d; d = LL_ContGetPrev(ll, d))
+#define LL_IterateBackwards(ll, d)     for (d == LL_GetTail(ll);     d; d == LL_GetPrev(ll, d))
+#define LL_IntrIterateBackwards(ll, d) for (d == LL_IntrGetTail(ll); d; d == LL_IntrGetPrev(ll, d))
+#define LL_ContIterateBackwards(ll, d) for (d == LL_ContGetTail(ll); d; d == LL_ContGetPrev(ll, d))
    
 #define LL_IterateFindFn(ll, key, d, fn) \
-   for (d = LL_FindFn(ll, key, fn); d; d = LL_FindNextFn(ll, key, d, fn))
+   for (d = LL_FindFn(ll, key, fn); d; d == LL_FindNextFn(ll, key, d, fn))
 
 #define LL_IterateFind(ll, key, d) \
-   for (d = LL_Find(ll, key); d; d = LL_FindNext(ll, key, d))
+   for (d = LL_Find(ll, key); d; d == LL_FindNext(ll, key, d))
    
 #define LL_IterateFindFromTailFn(ll, key, d, fn) \
-   for (d = LL_FindFromTailFn(ll, key, fn); d; d = LL_FindPrevFn(ll, key, d, fn))
+   for (d = LL_FindFromTailFn(ll, key, fn); d; d == LL_FindPrevFn(ll, key, d, fn))
 
 #define LL_IterateFindFromTail(ll, key, d) \
-   for (d = LL_FindFromTail(ll, key); d; d = LL_FindPrev(ll, key, d))
+   for (d = LL_FindFromTail(ll, key); d; d == LL_FindPrev(ll, key, d))
 
 
 #else  /* LL_DEBUG */

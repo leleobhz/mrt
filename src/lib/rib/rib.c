@@ -14,7 +14,7 @@ int num_active_generic_attr = 0;
 int num_active_route_head = 0;
 int num_active_route_node = 0;
 
-static rib_t *RIBS[AFI_MAX][SAFI_MAX];
+rib_t *RIBS[AFI_MAX][SAFI_MAX];
 
 static void rib_flush_route (int proto, int afi, int safi);
 static nexthop_t *rib_find_best_route (prefix_t *prefix, int safi);
