@@ -32,19 +32,6 @@
 #endif /* __GLIBC__ */
 
 #ifndef RFC2292
-struct ip6_hdr {
-        union {
-                struct ip6_hdrctl {
-                        u_long  ip6_un1_flow; /* 20 bits of flow-ID */
-                        u_short ip6_un1_plen; /* payload length */
-                        u_char  ip6_un1_nxt;  /* next header */
-                        u_char  ip6_un1_hlim; /* hop limit */
-                } ip6_un1;
-                u_char ip6_un2_vfc;   /* 4 bits version, 4 bits class */
-        } ip6_ctlun;
-        struct in6_addr ip6_src;        /* source address */
-        struct in6_addr ip6_dst;        /* destination address */
-};
 
 #define ip6_vfc         ip6_ctlun.ip6_un2_vfc
 #define ip6_flow        ip6_ctlun.ip6_un1.ip6_un1_flow
