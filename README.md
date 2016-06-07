@@ -1,0 +1,20 @@
+# Repository Information
+
+This repository aims allow compilation of mrt in last sf.net version with newer compilators. Tested in GCC 5.3.0 installed on a Ubuntu Xenial machine.
+
+# Original README 
+
+> $Id: README,v 1.1.1.1 2000/08/14 18:46:09 labovit Exp $
+> 
+> This distribution of the Multi-threaded Routing Toolkit includes
+> routing daemons, programming libraries and Internet
+> routing statistics/performance measurement tools.
+> 
+> The work is supported by National Science Foundation grants
+> (NCR-9710176 and NCR-9318902), and a gift from Intel Corporation. 
+> 	
+> Documentation and an installation guide for the MRT toolkit is 
+> available online at
+>    http://www.mrtd.net
+> 
+> Send email to mrt-support@merit.edu for assistence/bugs/comments.
